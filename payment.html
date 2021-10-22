@@ -42,14 +42,10 @@
 
     <!--end fonts-->
 
-    <title>آدرس و زمان ارسال | فروشگاه پرهان تک</title>
+    <title>پرداخت | فروشگاه پرهان تک</title>
 </head>
 <body class="t-header-light c-checkout-pages c-checkout-pages-ui">
 
-<!--begin header-->
-
-
-<!--end header-->
 
 <!--begin main-->
 <main>
@@ -74,19 +70,19 @@
                 <section class="o-page__content my-0">
                     <!-- progressbar -->
                     <ul class="c-checkout-steps">
-                        <li class="active" id="account">
+                        <li  id="account">
                             <strong>اطلاعات ارسال</strong>
                             <div class="c-checkout-steps__item c-checkout-steps__item--summary">
                                 <div>1</div>
                             </div>
                         </li>
-                        <li id="personal">
+                        <li class="active" id="payment">
                             <strong>پرداخت</strong>
                             <div class="c-checkout-steps__item c-checkout-steps__item--summary">
                                 <div>2</div>
                             </div>
                         </li>
-                        <li id="payment">
+                        <li id="send">
                             <strong>اتمام خرید و ارسال</strong>
                             <div class="c-checkout-steps__item c-checkout-steps__item--summary">
                                 <div>3</div>
@@ -94,89 +90,46 @@
                         </li>
                     </ul>
 
-
-                    <div class="address-section" id="address-section">
-                        <div class="c-checkout-contact is-completed js-user-address-container">
-                            <div class="c-checkout-contact__content js-default-recipient-box">
-                                <div class="c-checkout-contact__title">آدرس تحویل سفارش</div>
-                                <ul class="c-checkout-contact__items">
-                                    <li class="c-checkout-contact__item c-checkout-contact__item--address">
-                                        اصفهان - اصفهان چهار راه توحید - خ علامه امینی مجتمع آزادگان - پلاک 7 واحد 3
-                                    </li>
-                                    <li class="c-checkout-contact__item c-checkout-contact__item--username">تحویل گیرنده
-                                        : کوروش کریمی
-                                    </li>
-                                    <li class="c-checkout-contact__item">
-                                        <a href="javascript:" class="o-link o-link--sm o-link--has-icon"
-                                           id="change-address-btn">تغییر یا
-                                            ویرایش آدرس
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="c-payment__payment-types">
+                        <div class="c-payment__header mb-3">
+                            <div class="c-checkout-contact__title">لطفا شیوه پرداختی خود را انتخاب کنید</div>
                         </div>
-                    </div>
-
-                    <div class="c-checkout-address js-user-address-container" id="user-address-list-container">
-                        <div class="c-checkout-address__content js-ui-tab-content">
-                            <div class="c-checkout-address__item is-selected js-recipient-box js-address-box">
-                                <div class="c-checkout-address__item-headline js-address-select">
+                        <div class="d-flex flex-wrap js-ui-tab-content">
+                            <div class="c-checkout-payment__item d-flex flex-column justify-content-center align-items-center js-recipient-box js-payment-box">
+                                <div class="c-checkout-payment__item-headline d-none js-payment-select">
                                     <label class="c-outline-radio">
-                                        <input type="radio" name="radio" checked="checked"/>
+                                        <input type="radio" name="payment_method" value="online"/>
                                     </label>
                                 </div>
-                                <ul class="c-checkout-address__item-content">
-                                    <li class="c-checkout-address__item-address">فارس، شیراز، شیراز،خ. قصرالدشت، نرسیده
-                                        به
-                                        فلکه قصر الدشت، ک. 82/8، پلاک ۳۳،
-                                        واحد ۳
-                                    </li>
-                                    <li class="c-checkout-address__item-detail c-checkout-address__item-detail--postal-code">
-                                        ۲۳۴۵۶۷۸۹۰
-                                    </li>
-                                    <li class="c-checkout-address__item-detail c-checkout-address__item-detail--phone">
-                                        ۰۹۰۱۰۱۰۵۳۹۷
-                                    </li>
-                                    <li class="c-checkout-address__item-detail c-checkout-address__item-detail--username">
-                                        امیرحسین آرام
-                                    </li>
-                                </ul>
+                                <div class="c-checkout-payment__item-content">
+                                    <div class="c-payment__paymethod-icon text-center c-payment__paymethod-icon--online">
+                                        <i class="ri-global-line"></i>
+                                    </div>
+
+                                    <div class="c-payment__paymethod-title font-weight-bolder">
+                                       پرداخت آنلاین
+                                    </div>
+                                </div>
                                 <div class="c-checkout-address__actions">
                                 </div>
                             </div>
-                            <div class="c-checkout-address__item  js-recipient-box js-address-box">
-                                <div class="c-checkout-address__item-headline js-address-select">
+                            <div class="c-checkout-payment__item d-flex flex-column justify-content-center align-items-center js-recipient-box js-payment-box">
+                                <div class="c-checkout-payment__item-headline d-none js-address-select">
                                     <label class="c-outline-radio">
-                                        <input type="radio" name="radio" checked="checked"/>
+                                        <input type="radio" name="payment_method" value="pos"/>
                                     </label>
                                 </div>
-                                <ul class="c-checkout-address__item-content">
-                                    <li class="c-checkout-address__item-address">فارس، شیراز، شیراز،خ. قصرالدشت، نرسیده
-                                        به
-                                        فلکه قصر الدشت، ک. 82/8، پلاک ۳۳،
-                                        واحد ۳
-                                    </li>
-                                    <li class="c-checkout-address__item-detail c-checkout-address__item-detail--postal-code">
-                                        ۲۳۴۵۶۷۸۹۰
-                                    </li>
-                                    <li class="c-checkout-address__item-detail c-checkout-address__item-detail--phone">
-                                        ۰۹۰۱۰۱۰۵۳۹۷
-                                    </li>
-                                    <li class="c-checkout-address__item-detail c-checkout-address__item-detail--username">
-                                        امیرحسین آرام
-                                    </li>
-                                </ul>
+                                <div class="c-checkout-payment__item-content">
+                                    <div class="c-payment__paymethod-icon text-center c-payment__paymethod-icon--online">
+                                        <i class="ri-bank-card-line"></i>
+                                    </div>
+                                    <div class="c-payment__paymethod-title font-weight-bolder">
+                                            پرداخت در محل
+                                    </div>
+                                </div>
                                 <div class="c-checkout-address__actions">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-
-                    <div class="c-checkout-time-box">
-                        <div class="c-checkout-contact__title">شیوه و زمان ارسال</div>
-                        <div class="c-time-table js-time-container mt-4">
-                            <span>ارسال کالا بین 1 تا 5 روز کاری توسط فروشگاه پرهان تک</span>
                         </div>
                     </div>
 
@@ -191,7 +144,8 @@
                                         </a>
                                     </div>
                                     <div class="c-checkout-pack__item-detail text-muted">
-                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8
+                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و
+                                        8
                                         گیگابایت رم
                                     </div>
                                 </div>
@@ -204,7 +158,8 @@
                                         </a>
                                     </div>
                                     <div class="c-checkout-pack__item-detail text-muted">
-                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8
+                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و
+                                        8
                                         گیگابایت رم
                                     </div>
                                 </div>
@@ -217,7 +172,8 @@
                                         </a>
                                     </div>
                                     <div class="c-checkout-pack__item-detail text-muted">
-                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8
+                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و
+                                        8
                                         گیگابایت رم
                                     </div>
                                 </div>
@@ -230,7 +186,8 @@
                                         </a>
                                     </div>
                                     <div class="c-checkout-pack__item-detail text-muted">
-                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8
+                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و
+                                        8
                                         گیگابایت رم
                                     </div>
                                 </div>
@@ -243,7 +200,8 @@
                                         </a>
                                     </div>
                                     <div class="c-checkout-pack__item-detail text-muted">
-                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8
+                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و
+                                        8
                                         گیگابایت رم
                                     </div>
                                 </div>
@@ -256,7 +214,8 @@
                                         </a>
                                     </div>
                                     <div class="c-checkout-pack__item-detail text-muted">
-                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8
+                                        گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و
+                                        8
                                         گیگابایت رم
                                     </div>
                                 </div>
@@ -319,7 +278,7 @@
                             </ul>
                         </div>
                         <button type="button" class="btn product-summary__btn mt-3 ">
-                            تایید و خرید
+                            تایید و ادامه
                         </button>
                     </div>
                 </aside>
@@ -328,7 +287,7 @@
     </section>
 
     <div class="c-checkout-submit js-add-to-cart-sticky">
-        <button class="btn product-summary__btn js-cart-page-add-to-cart">تایید و خرید</button>
+        <button class="btn product-summary__btn js-cart-page-add-to-cart">تایید و ادامه</button>
     </div>
 </main>
 <!--end main-->

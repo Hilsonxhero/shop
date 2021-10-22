@@ -53,7 +53,6 @@ if (document.getElementById('eye--ui')) document.getElementById('eye--ui').addEv
 })
 
 
-
 $(".js-scroll-to-top-btn").on("click", function () {
     $("html,body").animate({scrollTop: 0}, 800)
 })
@@ -74,7 +73,7 @@ $headerLinks.hover(function () {
 let navbar = document.getElementById("navbar");
 let sticky = 120;
 
-if (navbar){
+if (navbar) {
     window.addEventListener("scroll", () => {
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
@@ -102,7 +101,6 @@ on('click', '.navbar .dropdown > a', function (e) {
         this.nextElementSibling.classList.toggle('dropdown-active')
     }
 }, !0);
-
 
 
 const breakpoints = {
@@ -401,14 +399,14 @@ if (rangeElement) {
     };
 
     let slider = new rangeSlider(rangeElement, select(".range__value"), options);
-    let mobileRange = new rangeSlider(select("#mb-price-range"),select(".mobile-range__value"), options);
+    let mobileRange = new rangeSlider(select("#mb-price-range"), select(".mobile-range__value"), options);
 
     slider.init();
     mobileRange.init();
 }
 
-(function() {
-    $('.number-spinner>.ns-btn>a').click(function() {
+(function () {
+    $('.number-spinner>.ns-btn>a').click(function () {
         var btn = $(this),
             oldValue = btn.closest('.number-spinner').find('input').val().trim(),
             newVal = 0;
@@ -424,7 +422,7 @@ if (rangeElement) {
         }
         btn.closest('.number-spinner').find('input').val(newVal);
     });
-    $('.number-spinner>input').keypress(function(evt) {
+    $('.number-spinner>input').keypress(function (evt) {
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -441,12 +439,10 @@ on('click', '.listing-option-remove', function (e) {
 
 on('click', '.js-listing-options-clear', function () {
     let all_listing_options = select('.c-listing-options__labels ul li', true);
-    console.log(all_listing_options);
     all_listing_options.forEach(e => {
         e.parentElement.removeChild(e);
     })
 }, true)
-
 
 
 $(document).ready(function () {
@@ -535,7 +531,7 @@ var navbar_initialized,
     backgroundOrange = false,
     toggle_initialized = false;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 
     // Activate the image for the navbar-collapse
@@ -545,29 +541,29 @@ $(document).ready(function() {
     scroll_distance = $navbar.attr('color-on-scroll') || 500;
 });
 
-$(window).on('resize', function() {
+$(window).on('resize', function () {
     nowuiKit.initNavbarImage();
 });
 
-$(document).on('click', '.navbar-toggler', function() {
+$(document).on('click', '.navbar-toggler', function () {
     $toggle = $(this);
 
     if (nowuiKit.misc.navbar_menu_visible == 1) {
         $('html').removeClass('nav-open');
         nowuiKit.misc.navbar_menu_visible = 0;
         $('#bodyClick').remove();
-        setTimeout(function() {
+        setTimeout(function () {
             $toggle.removeClass('toggled');
         }, 550);
     } else {
-        setTimeout(function() {
+        setTimeout(function () {
             $toggle.addClass('toggled');
         }, 580);
         div = '<div id="bodyClick"></div>';
-        $(div).appendTo('body').click(function() {
+        $(div).appendTo('body').click(function () {
             $('html').removeClass('nav-open');
             nowuiKit.misc.navbar_menu_visible = 0;
-            setTimeout(function() {
+            setTimeout(function () {
                 $toggle.removeClass('toggled');
                 $('#bodyClick').remove();
             }, 550);
@@ -583,7 +579,7 @@ nowuiKit = {
         navbar_menu_visible: 0
     },
 
-    checkScrollForTransparentNavbar: debounce(function() {
+    checkScrollForTransparentNavbar: debounce(function () {
         if ($(document).scrollTop() > scroll_distance) {
             if (transparent) {
                 transparent = false;
@@ -597,7 +593,7 @@ nowuiKit = {
         }
     }, 17),
 
-    initNavbarImage: function() {
+    initNavbarImage: function () {
         var $navbar = $('.navbar').find('.navbar-translate').siblings('.navbar-collapse');
         var background_image = $navbar.data('nav-image');
 
@@ -616,7 +612,7 @@ nowuiKit = {
         }
     },
 
-    initSliders: function() {
+    initSliders: function () {
         // Sliders for demo purpose in refine cards section
         var slider = document.getElementById('sliderRegular');
 
@@ -647,7 +643,7 @@ var big_image;
 
 // Javascript just for Demo purpose, remove it from your project
 nowuiKitDemo = {
-    checkScrollForParallax: debounce(function() {
+    checkScrollForParallax: debounce(function () {
         var current_scroll = $(this).scrollTop();
 
         oVal = ($(window).scrollTop() / 3);
@@ -682,17 +678,46 @@ $(window).scroll(function () {
 
 function debounce(func, wait, immediate) {
     var timeout;
-    return function() {
+    return function () {
         var context = this,
             args = arguments;
         clearTimeout(timeout);
-        timeout = setTimeout(function() {
+        timeout = setTimeout(function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
         }, wait);
         if (immediate && !timeout) func.apply(context, args);
     };
 };
+
+$('.js-address-box').on("click",function (){
+
+    $('.js-address-box').each(function () {
+        $(this).removeClass('is-selected')
+        $(this).find('.js-address-select label input').attr('checked', false)
+    });
+    $(this).addClass('is-selected');
+    $(this).find('.js-address-select label input').attr('checked', true)
+
+    $('#user-address-list-container').fadeOut(0)
+    $('#address-section').fadeIn(0)
+})
+
+$('.js-payment-box').on("click",function (){
+
+    $('.js-payment-box').each(function () {
+        $(this).removeClass('is-selected')
+        $(this).find('.js-payment-select label input').attr('checked', false)
+    });
+    $(this).addClass('is-selected');
+    $(this).find('.js-payment-select label input').attr('checked', true)
+})
+
+
+$('#change-address-btn').on("click",function (){
+    $('#address-section').fadeOut(0)
+    $('#user-address-list-container').fadeIn(0)
+})
 
 
 
